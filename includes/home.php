@@ -103,7 +103,7 @@ if (strlen($_SESSION['detsuid']==0)) {
         <span class="dashboard">Dashboard</span>
       </div>
       <div class="search-box">
-        <input input type="text" id="search-input" class="form-control form-control-sm mx-2" placeholder="Search...">
+        <input input type="text" id="search-input" class="form-control form-control-sm mx-2" placeholder=Nyari.....>
         <i class='bx bx-search' ></i>
 </div>
 <script>
@@ -174,7 +174,7 @@ $name=$row['name'];
 
       <div class="box">
   <div class="right-side">
-    <div class="box-topic">Today Expense</div>
+    <div class="box-topic" style ="font-size:medium;">Pengeluaran hari ini</div>
 
     <?php
       //Today Expense
@@ -194,7 +194,7 @@ $name=$row['name'];
     </div>
     <div class="indicator">
       <i class='bx bx-up-arrow-alt'></i>
-      <span class="text">Up from Today</span>
+      <span class="text">dari pagi</span>
     </div>
   </div>
   <i class='fas fa-circle-plus cart'></i>
@@ -210,7 +210,7 @@ $name=$row['name'];
 
         <div class="box">
           <div class="right-side">
-            <div class="box-topic">Yesterday Expense</div>
+            <div class="box-topic" style ="font-size:medium;">Pengeluaran Kemarin</div>
 
             <?php
             //Yestreday Expense
@@ -228,7 +228,7 @@ $name=$row['name'];
             }?></div>
             <div class="indicator">
               <i class='bx bx-up-arrow-alt'></i>
-              <span class="text">Up from yesterday</span>
+              <span class="text">Dari kemarin</span>
             </div>
           </div>
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-Y5Oh6F67GY6j+o6lYzZJm+ZeEj9m1ydIGe19q3JV1lk4/4gBVwuP8jwWQ2NfhzJdZtg9tyI8cFk3qTEwhG4sg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -244,7 +244,7 @@ $name=$row['name'];
   <!-- MONTH expense Box -->
         <div class="box">
           <div class="right-side">
-            <div class="box-topic">Last 30 day Expense</div>
+            <div class="box-topic" style ="font-size:medium;">30 hari terakhir</div>
 
             <?php
             //Monthly Expense
@@ -265,7 +265,7 @@ $name=$row['name'];
             ?></div>
             <div class="indicator">
               <i class='bx bx-up-arrow-alt'></i>
-              <span class="text">Up from Last 30 day</span>
+              <span class="text">dari 30 hari terakhir</span>
             </div>
           </div>
           <i class='fas fa-history cart three' ></i>
@@ -275,7 +275,7 @@ $name=$row['name'];
         
         <div class="box">
           <div class="right-side">
-            <div class="box-topic">Total Expense</div>
+            <div class="box-topic" style ="font-size:medium;">Total Pengeluaran</div>
 
             <?php
             //Yearly Expense
@@ -294,7 +294,7 @@ $name=$row['name'];
               ?></div>
             <div class="indicator">
               <i class='bx bx-up-arrow-alt up'></i>
-              <span class="text">Up from Year</span>
+              <span class="text">dari awal tahun</span>
             </div>
           </div>
           <i class='fas fa-piggy-bank cart four' ></i>
@@ -306,7 +306,7 @@ $name=$row['name'];
 
 <div class="card">
   <div class="card-header">
-    <h5 class="card-title">Expense Chart</h5>
+    <h5 class="card-title">Diagram Pengeluaran</h5>
   </div>
   <div class="card-body">
     
@@ -514,15 +514,15 @@ canvas {
 
 <div class="card1">
   <div class="card-header">
-    <h5 class="card-title">Category Table</h5>
+    <h5 class="card-title">Tabel Kategori</h5>
   </div>
   <div class="card-body">
     <table class="table">
       <thead>
         <tr>
-          <th>Percentage</th>
-          <th>Category</th>
-          <th>Amount</th>
+          <th>Persentase</th>
+          <th>Kategori</th>
+          <th>Total</th>
         </tr>
       </thead>
       <tbody id="expense-table-body"></tbody>

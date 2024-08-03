@@ -36,6 +36,8 @@ if (strlen($_SESSION['detsuid'] == 0)) {
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
+    <title>Piti</title>
+    <link rel="icon" href="favicon.ico" >
     <!--<title> Responsiive Admin Dashboard | CodingLab </title>-->
     <link rel="stylesheet" href="css/style.css">
     <!-- Boxicons CDN Link -->
@@ -172,9 +174,9 @@ $name=$row['name'];
   <span class="admin_name"><?php echo $name; ?></span>
   <i class='bx bx-chevron-down' id='profile-options-toggle'></i>
   <ul class="profile-options" id='profile-options'>
-  <li><a href="user_profile.php"><i class="fas fa-user-circle"></i> User Profile</a></li>
+  <li><a href="user_profile.php"><i class="fas fa-user-circle"></i> Profil Pengguna</a></li>
     <!-- <li><a href="#"><i class="fas fa-cog"></i> Account Pengaturans</a></li> -->
-    <li><a href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+    <li><a href="logout.php"><i class="fas fa-sign-out-alt"></i> Keluar </a></li>
   </ul>
 </div>
 <script>
@@ -208,12 +210,12 @@ $name=$row['name'];
   <div class="card-header">
     <div class="row">
       <div class="col-md-6">
-        <h4 class="card-title">Add Expense</h4>
+        <h4 class="card-title">tambah data pengeluaran</h4>
       </div>
       <div class="col-md-6 text-right">
   <div class="ml-auto">
     <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#add-category-modal">
-      <i class="fas fa-plus-circle"></i> Add Category
+      <i class="fas fa-plus-circle"></i> tambah kategori
     </button>
   </div>
 </div>
@@ -224,20 +226,20 @@ $name=$row['name'];
     <div class="modal-content">
       <form id="add-category-form" method="post" action="add_category.php">
         <div class="modal-header">
-          <h5 class="modal-title" id="add-category-modal-title">Add Category</h5>
+          <h5 class="modal-title" id="add-category-modal-title">tambah kategori</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
           <div class="form-group">
-            <label for="category-name">Category Name</label>
+            <label for="category-name">nama kategori</label>
             <input type="text" class="form-control" id="category-name"  name="category-name" required>
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-          <button type="submit" class="btn btn-primary" name="add-category-submit">Add Category</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+          <button type="submit" class="btn btn-primary" name="add-category-submit">Tambah Kategori</button>
        
         </div>
       </form>
@@ -252,15 +254,15 @@ $name=$row['name'];
   <div class="card-body">
     <form id="expense-form" role="form" method="post" action="" class="needs-validation">
     <div class="form-group">
-  <label for="dateexpense">Date of Expense</label>
+  <label for="dateexpense">Tanggalnya</label>
   <input class="form-control" type="date" id="dateexpense" name="dateexpense" value="<?php echo date('Y-m-d'); ?>" >
 </div>
 
 
 <div class="form-group">
-  <label for="category">Category</label>
+  <label for="category">Kategori</label>
   <select class="form-control" id="category" name="category" required>
-    <option value="" selected disabled>Choose Category</option>
+    <option value="" selected disabled>pilih kategorynya</option>
     <?php
     $userid = $_SESSION['detsuid'];
     $query = "SELECT * FROM tblcategory WHERE UserId = $userid";
@@ -274,18 +276,18 @@ $name=$row['name'];
 </div>
 
       <div class="form-group">
-        <label for="costitem">Cost of Item</label>
+        <label for="costitem">Harganya</label>
         <input class="form-control" type="number" id="costitem" name="costitem" required>
          </div>
 
         <div class="form-group">
-            <label for="category-description">Description</label>
+            <label for="category-description">Deskripsi</label>
             <textarea class="form-control" id="category-description" name="category-description" required></textarea>
           </div>
 
     
       <div class="form-group">
-        <button type="submit" class="btn btn-primary" name="submit">Add</button>
+        <button type="submit" class="btn btn-primary" name="submit">tambah</button>
       </div>
     </form>
     <div id="success-message" class="alert alert-success" style="display:none;">

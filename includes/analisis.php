@@ -13,6 +13,8 @@ if (strlen($_SESSION['detsuid']==0)) {
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
+    <title>Piti</title>
+    <link rel="icon" href="favicon.ico" >
     <!--<title> Responsiive Admin Dashboard | CodingLab </title>-->
     <link rel="stylesheet" href="css/style.css">
     <!-- Boxicons CDN Link -->
@@ -116,9 +118,9 @@ $name=$row['name'];
   <span class="admin_name"><?php echo $name; ?></span>
   <i class='bx bx-chevron-down' id='profile-options-toggle'></i>
   <ul class="profile-options" id='profile-options'>
-    <li><a href="#"><i class="fas fa-user-circle"></i> User Profile</a></li>
+    <li><a href="#"><i class="fas fa-user-circle"></i> Profil Pengguna</a></li>
     <!-- <li><a href="#"><i class="fas fa-cog"></i> Account Pengaturans</a></li> -->
-    <li><a href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+    <li><a href="logout.php"><i class="fas fa-sign-out-alt"></i> Keluar</a></li>
   </ul>
 </div>
 

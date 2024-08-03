@@ -31,6 +31,8 @@ echo "<script>alert('Something went wrong. Please try again');</script>";
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
+    <title>Piti</title>
+    <link rel="icon" href="favicon.ico" >
     <!--<title> Responsiive Admin Dashboard | CodingLab </title>-->
     <link rel="stylesheet" href="css/style.css">
     <!-- Boxicons CDN Link -->
@@ -202,9 +204,9 @@ $name=$row['name'];
   <span class="admin_name"><?php echo $name; ?></span>
   <i class='bx bx-chevron-down' id='profile-options-toggle'></i>
   <ul class="profile-options" id='profile-options'>
-  <li><a href="user_profile.php"><i class="fas fa-user-circle"></i> User Profile</a></li>
+  <li><a href="user_profile.php"><i class="fas fa-user-circle"></i> Profil Pengguna</a></li>
     <!-- <li><a href="#"><i class="fas fa-cog"></i> Account Pengaturans</a></li> -->
-    <li><a href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+    <li><a href="logout.php"><i class="fas fa-sign-out-alt"></i> Keluar</a></li>
   </ul>
 </div>
 <script>
@@ -230,7 +232,7 @@ $name=$row['name'];
                     <div class="card-header">
                         <div class="row">
                             <div class="col-md-6">
-                                <h4 class="card-title">Manage Expense</h4>
+                                <h4 class="card-title">Manajemen Pengeluaran</h4>
                             </div>
                             <div class="col-md-6 text-right">
   <label>Show 
@@ -279,12 +281,12 @@ if(isset($_GET['limit']) && !empty($_GET['limit'])) {
                                 <table class="table table-striped table-bordered table-hover">
                                     <thead>
                                         <tr>
-                                            <th>#</th>
-                                            <th>Category</th>
-                                            <th>Expense Cost</th>
-                                            <th>Description</th>
-                                            <th>Expense Date</th>
-                                            <th>Action</th>
+                                            <th>No</th>
+                                            <th>Kategori</th>
+                                            <th>Jumlah pengeluaran</th>
+                                            <th>Deskripsi</th>
+                                            <th>Tanggal</th>
+                                            <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -316,8 +318,8 @@ if(isset($_GET['limit']) && !empty($_GET['limit'])) {
                                               Action
                                             </button>
                                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                              <a class="dropdown-item" href="manage-Pengeluaran.php?delid=<?php echo $row['ID'];?>" data-toggle="modal" data-target="#editExpenseModal"><i class="fas fa-edit"></i> Edit</a>
-                                              <a class="dropdown-item" href="manage-Pengeluaran.php?delid=<?php echo $row['ID'];?>"><i class="fas fa-trash-alt"></i> Delete</a>
+                                              <a class="dropdown-item" href="manage-Pengeluaran.php?delid=<?php echo $row['ID'];?>" data-toggle="modal" data-target="#editExpenseModal"><i class="fas fa-edit"></i> Ubah</a>
+                                              <a class="dropdown-item" href="manage-Pengeluaran.php?delid=<?php echo $row['ID'];?>"><i class="fas fa-trash-alt"></i> Hapus</a>
                                             </div>
                                           </div>
 
@@ -326,7 +328,7 @@ if(isset($_GET['limit']) && !empty($_GET['limit'])) {
                                             <div class="modal-dialog" role="document">
                                               <div class="modal-content">
                                                 <div class="modal-header">
-                                                  <h5 class="modal-title" id="editExpenseModalLabel">Edit Expense</h5>
+                                                  <h5 class="modal-title" id="editExpenseModalLabel">Ubah Pengeluaran</h5>
                                                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                   </button>
@@ -342,11 +344,11 @@ if(isset($_GET['limit']) && !empty($_GET['limit'])) {
                                                     }
                                                     ?>
                                                      <div class="form-group">
-                                                            <label for="edit-expense-date">Date:</label>
+                                                            <label for="edit-expense-date">Tanggal:</label>
                                                             <input type="date" class="form-control" id="edit-expense-date" name="dateexpense" value="<?php echo $row['ExpenseDate']; ?>">
                                                         </div>
                                                         <div class="form-group">
-                                                        <label for="edit-expense-category">Category:</label>
+                                                        <label for="edit-expense-category">Kategori:</label>
                                                         <select class="form-control" id="edit-expense-category" name="category">
                                                             <?php
                                                             $query = mysqli_query($db, "SELECT * FROM tblcategory where UserId = $userid");
@@ -361,19 +363,19 @@ if(isset($_GET['limit']) && !empty($_GET['limit'])) {
                                                         </select>
                                                     </div>
                                                     <div class="form-group">
-                                                      <label for="edit-expense-cost">Cost:</label>
+                                                      <label for="edit-expense-cost">Nominal:</label>
                                                       <input type="number" class="form-control" id="edit-expense-cost" name="cost" value="<?php echo $row['ExpenseCost'];?>">
                                                     </div>
                                                     <div class="form-group">
-                                                    <label for="edit-expense-description">Description:</label>
+                                                    <label for="edit-expense-description">Deskripsi:</label>
                                           <textarea class="form-control" id="edit-expense-description" name="description"><?php echo isset($row) ? $row['Description'] : ''; ?></textarea>
                                           </div>
                                           <input type="hidden" name="expenseid" value="<?php echo isset($row) ? $row['ID'] : ''; ?>">
                                           </div>
 
                                           <div class="modal-footer">
-                                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                          <button type="submit" class="btn btn-primary" name="submit">Save Changes</button>
+                                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                                          <button type="submit" class="btn btn-primary" name="submit">Simpan Perubahan</button>
 
 
                                           </div>

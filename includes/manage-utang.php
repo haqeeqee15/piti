@@ -28,6 +28,8 @@ if (strlen($_SESSION['detsuid']==0)) {
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
+    <title>Piti</title>
+    <link rel="icon" href="favicon.ico" >
     <!--<title> Responsiive Admin Dashboard | CodingLab </title>-->
     <link rel="stylesheet" href="css/style.css">
     <!-- Boxicons CDN Link -->
@@ -155,7 +157,7 @@ if (strlen($_SESSION['detsuid']==0)) {
         <span class="dashboard">Piti</span>
       </div>
       <div class="search-box">
-        <input input type="text" id="search-input" class="form-control form-control-sm mx-2" placeholder="Search...">
+        <input input type="text" id="search-input" class="form-control form-control-sm mx-2" placeholder="Nyari....">
         <i class='bx bx-search' ></i>
 </div>
 <script>
@@ -199,9 +201,9 @@ $name=$row['name'];
   <span class="admin_name"><?php echo $name; ?></span>
   <i class='bx bx-chevron-down' id='profile-options-toggle'></i>
   <ul class="profile-options" id='profile-options'>
-  <li><a href="user_profile.php"><i class="fas fa-user-circle"></i> User Profile</a></li>
+  <li><a href="user_profile.php"><i class="fas fa-user-circle"></i> Profil Pengguna</a></li>
     <!-- <li><a href="#"><i class="fas fa-cog"></i> Account Pengaturans</a></li> -->
-    <li><a href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+    <li><a href="logout.php"><i class="fas fa-sign-out-alt"></i> Keluar</a></li>
   </ul>
 </div>
 <script>
@@ -227,7 +229,7 @@ $name=$row['name'];
                     <div class="card-header">
                         <div class="row">
                             <div class="col-md-6">
-                                <h4 class="card-title">Manage Utang</h4>
+                                <h4 class="card-title">Manajemen Hutang</h4>
                                
                             </div>
                             
@@ -280,14 +282,14 @@ if(isset($_GET['limit']) && !empty($_GET['limit'])) {
                                 <table class="table table-striped table-bordered table-hover">
                                     <thead>
                                     <tr>
-                                    <th>#</th>
-                                    <th>Name</th>
-                                    <th>Date of Utang</th>
-                                    <th>Amount</th>
-                                    <th>Description</th>
+                                    <th>No</th>
+                                    <th>Nama</th>
+                                    <th>Tanggal hutang</th>
+                                    <th>Nominal</th>
+                                    <th>Deskripsi</th>
                                     <th>Status</th>
-                                    <th>Current Time</th>
-                                    <th>Action</th>
+                                    <th>Saat ini</th>
+                                    <th>Aksi</th>
                                 </tr>
                                     </thead>
                                     <tbody>
@@ -352,23 +354,23 @@ if(isset($_GET['limit']) && !empty($_GET['limit'])) {
                                                         <div class="form-group">
                                                             <label for="edit-expense-status">Status:</label>
                                                             <select class="form-control" id="edit-expense-status" name="status">
-                                                                <option value="pending" <?php if($row['status'] == 'pending') echo 'selected'; ?>>Pending</option>
-                                                                <option value="received" <?php if($row['status'] == 'received') echo 'selected'; ?>>Received</option>
+                                                                <option value="pending" <?php if($row['status'] == 'pending') echo 'selected'; ?>>Menunggu</option>
+                                                                <option value="received" <?php if($row['status'] == 'received') echo 'selected'; ?>>Diterima</option>
                                                             </select>
                                                         </div>
                                                         <div class="form-group">
-                                                            <label for="edit-expense-amount">Expense Amount:</label>
+                                                            <label for="edit-expense-amount">Total Pengeluaran:</label>
                                                             <input type="number" class="form-control" id="edit-expense-amount" name="amount" value="<?php echo $row['amount']; ?>">
                                                         </div>
                                                         <div class="form-group">
-                                                            <label for="edit-expense-description">Expense Description:</label>
+                                                            <label for="edit-expense-description">Deskripsi Pengeluaran:</label>
                                                             <textarea class="form-control" id="edit-expense-description" name="description"><?php echo $row['description']; ?></textarea>
                                                         </div>
                                                     
                                                         <input type="hidden" name="expense-id" value="<?php echo $row['id']; ?>">
                                                         <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                                                        <button type="submit" class="btn btn-primary">Update</button>
+                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                                                        <button type="submit" class="btn btn-primary">Perbarui</button>
                                                       </div>
                                                     </form>
                                                 </div>

@@ -120,12 +120,12 @@
                   <div class="form-check d-flex justify-content-center mb-3">
                     <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3c" required/>
                     <label class="form-check-label" for="form2Example3">
-                      I agree all statements in <a href="#!">Terms of service</a>
+                      Saya setuju dengan semua S&K <a href="#!">Terms of service</a>
                     </label>
                   </div>
 
                   <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                    <button type="submit"  name="submit" value="Signup" class="btn btn-primary btn-lg">Create Account</button>
+                    <button type="submit"  name="submit" value="Signup" class="btn btn-primary btn-lg">Buat akun</button>
                   </div>
                 
           <!-- <div class="divider d-flex align-items-center my-4">

@@ -13,6 +13,8 @@ if (strlen($_SESSION['detsuid']==0)) {
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
+    <title>Piti</title>
+    <link rel="icon" href="favicon.ico" >
     <!--<title> Responsiive Admin Dashboard | CodingLab </title>-->
     <link rel="stylesheet" href="css/style.css">
     <!-- Boxicons CDN Link -->
@@ -116,9 +118,9 @@ $name=$row['name'];
   <span class="admin_name"><?php echo $name; ?></span>
   <i class='bx bx-chevron-down' id='profile-options-toggle'></i>
   <ul class="profile-options" id='profile-options'>
-  <li><a href="user_profile.php"><i class="fas fa-user-circle"></i> User Profile</a></li>
+  <li><a href="user_profile.php"><i class="fas fa-user-circle"></i> Profil Pengguna</a></li>
     <!-- <li><a href="#"><i class="fas fa-cog"></i> Account Pengaturans</a></li> -->
-    <li><a href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+    <li><a href="logout.php"><i class="fas fa-sign-out-alt"></i> Keluar</a></li>
   </ul>
 </div>
 
@@ -150,23 +152,23 @@ $name=$row['name'];
         <div class="card-body">
           <form id="LaporanForm" method="GET" >
             <div class="form-group">
-              <label for="LaporanType">Laporan Type</label>
+              <label for="LaporanType">Tipe Laporan</label>
               <select class="form-control" id="LaporanType" name="LaporanType" required>
-                <option value="" selected disabled>Select a Laporan type</option>
-                <option value="expense">Expense Laporan</option>
-                <option value="pending">Pending Laporan</option>
-                <option value="received">Received Laporan</option>
+                <option value="" selected disabled>Pilih Tipe Laoran</option>
+                <option value="expense">Laporan Pengeluaran</option>
+                <option value="pending">Laporan menunggu</option>
+                <option value="received">Laporan diterima</option>
               </select>
             </div>
             <div class="form-group">
-              <label for="startDate">Start Date</label>
+              <label for="startDate">Tanggal mulai</label>
               <input type="date" class="form-control" id="startDate" name="startDate" required>
             </div>
             <div class="form-group">
-              <label for="endDate">End Date</label>
+              <label for="endDate">Sampai</label>
               <input type="date" class="form-control" id="endDate" name="endDate" required>
             </div>
-            <button type="submit" name="generateLaporan" class="btn btn-primary">Generate Laporan</button>
+            <button type="submit" name="generateLaporan" class="btn btn-primary">Buat Laporan</button>
           </form>
         </div>
       </div>

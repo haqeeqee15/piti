@@ -13,6 +13,8 @@ if (strlen($_SESSION['detsuid']==0)) {
 <html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
+    <title>Piti</title>
+    <link rel="icon" href="favicon.ico" >
     <!--<title> Responsiive Admin Dashboard | CodingLab </title>-->
     <link rel="stylesheet" href="css/style.css">
     <!-- Boxicons CDN Link -->
@@ -151,9 +153,9 @@ $name=$row['name'];
   <span class="admin_name"><?php echo $name; ?></span>
   <i class='bx bx-chevron-down' id='profile-options-toggle'></i>
   <ul class="profile-options" id='profile-options'>
-  <li><a href="user_profile.php"><i class="fas fa-user-circle"></i> User Profile</a></li>
+  <li><a href="user_profile.php"><i class="fas fa-user-circle"></i> Profil Pengguna</a></li>
     <!-- <li><a href="#"><i class="fas fa-cog"></i> Account Pengaturans</a></li> -->
-    <li><a href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+    <li><a href="logout.php"><i class="fas fa-sign-out-alt"></i> Keluar</a></li>
   </ul>
 </div>
 
@@ -181,7 +183,7 @@ $name=$row['name'];
   <div class="card-header">
     <div class="row">
       <div class="col-md-6">
-        <h4 class="card-title">Add Utang</h4>
+        <h4 class="card-title">Nambah Utang</h4>
         
       </div>
    
@@ -231,31 +233,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <div class="card-body">
   <form method="POST">
     <div class="form-group">
-      <label for="name">Name:</label>
+      <label for="name">Nama:</label>
       <input type="text" class="form-control" id="name" name="name" required>
     </div>
   
     <div class="form-group">
-      <label for="date">Date of Utang:</label>
+      <label for="date">Tanggal ngutang:</label>
       <input type="date" class="form-control" id="date" name="date" required>
     </div>
     <div class="form-group">
-      <label for="amount">Amount:</label>
+      <label for="amount">Nominal:</label>
       <input type="number" class="form-control" id="amount" name="amount" required>
     </div>
     <div class="form-group">
-      <label for="description">Description:</label>
+      <label for="description">Deskripsi:</label>
       <textarea class="form-control" id="description" name="description" maxlength="250" required></textarea>
-      <small class="form-text text-muted">Maximum 250 characters.</small>
+      <small class="form-text text-muted">Maksimal 250 karakter.</small>
     </div>
     <div class="form-group">
       <label for="status">Status:</label>
       <select class="form-control" id="status" name="status" required>
-        <option value="pending">Pending</option>
-        <option value="received">Received</option>
+        <option value="pending">Menunggu</option>
+        <option value="received">Diterima</option>
       </select>
     </div>
-    <button type="submit" class="btn btn-primary">Add</button>
+    <button type="submit" class="btn btn-primary">Tambah</button>
   </form>
 </div>
 
